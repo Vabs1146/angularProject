@@ -1,0 +1,41 @@
+<body>
+    <mat-sidenav-container fullscreen>
+        <mat-sidenav #sidenav [(opened)]="opened" mode="side">
+            <div class="list">
+                <img src="../../assets/img/logo.png"height="120%" style="margin-left: 10%;">
+            </div>
+            <hr>
+            <div style="height: 70%;">
+                <mat-list role="list">
+                    <a mat-list-item (click)="set(0)">Production</a>
+                    <a mat-list-item (click)="set(1)">Crum</a>
+                    <a mat-list-item (click)="set(2)">Solution</a>
+                    <a mat-list-item (click)="set(3)">Modular</a>
+                    <mat-list class="parent" id="parent">
+                        <a mat-list-item >Color Master<mat-icon style="margin-left:120px;">keyboard_arrow_down</mat-icon></a>
+                        <mat-list id="child" class="child">
+                            <a style="display: flex;float: right;width: 90%" mat-list-item (click)="set(4)">Color Name</a>
+                            <a style="display: flex;float: right;width: 90%" class="childComp" mat-list-item (click)="set(5)">Color Code</a>
+                        </mat-list>
+                    </mat-list>
+                    <a mat-list-item (click)="set(6)">payroll</a>
+                </mat-list>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <mat-toolbar>
+                 <button mat-icon-button (click)="opened=!opened"><mat-icon>menu</mat-icon></button>
+                 <p style="flex: 1 1 auto;text-align: center;"> ADIFLEX  TYLES  FACTORY </p>
+                 <div class="ml-auto" style="font-size: 15px;">{{name}}<button mat-icon-button (click)="login()"><mat-icon>logout</mat-icon></button></div>
+                  
+            </mat-toolbar>
+
+            <div class="main-content">
+                <router-outlet></router-outlet>
+            </div>
+                 
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</body>

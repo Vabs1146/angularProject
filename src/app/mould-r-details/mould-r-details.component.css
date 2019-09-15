@@ -1,0 +1,17 @@
+.data{
+    text-align: center;
+    padding: 4%;
+}
+
+input{
+    height: 40px;
+}
+
+table {
+    width: 100%;border: 2px;
+}
+
+th{
+    background-color:#7f989cf1;
+    font-size: 13px;
+}
